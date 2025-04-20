@@ -1,0 +1,43 @@
+
+<app-header></app-header>
+<section class="page-title centred" style="background-image: url(../../../../assets/images/resource/about-school.jpg);">
+    <div class="container">
+        <div class="content-box">
+            <h1> Notice Borad</h1>
+            <img src="../../../../assets/images/icons/line.svg" style="width:80px;">
+            <p>St. Fidelis School, Kheda Khush Khabar, Aligarh</p>
+        </div>
+    </div>
+</section>
+
+<section class="about-section style-two  body-bg notice-in notice NoticeBoard">
+    <div class="container">
+        <div class="row">
+            @for (item of noticeBoard; track item) {
+            <div class="col-lg-3 col-md-3 col-sm-3  col-12">
+                <div class="notice-block-two">
+                    <a style="cursor: pointer;" (click)="noticeBoardPdf(item.id)">
+                        <div class="slick-slide animated slick-current slick-active" data-slick-index="0"
+                            aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10">
+                            <div class="NoticeLeft">
+                                <span>Updated on</span>{{ item.date | date: 'dd' }}
+                                <div class="month">{{ item.date | date: 'MMM' }}</div>
+                            </div>
+                            <div class="Noticeright">
+                                <span>New</span>
+                                <div class="NoticeHead">{{ item.title }}</div>
+                                <p class="updated">Updated by: {{ item.publiser }}</p>
+                                <div class="banner-line1"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            }@empty {
+            <p>There are no items.</p>
+            }
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

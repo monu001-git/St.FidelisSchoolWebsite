@@ -1,0 +1,318 @@
+<!-- <app-header></app-header>
+
+<section class="page-title centred" style="background-image: url(../../../../assets/images/resource/about-school.jpg);">
+    <div class="container">
+        <div class="content-box">
+            <h1>Facilities</h1>
+            <img src="../../../../assets/images/icons/line.svg" style="width:80px;">
+            <p>St. Fidelis School, Kheda Khush Khabar, Aligarh</p>
+        
+        </div>
+    </div>
+</section>
+
+<section class="about-section about-infra style-two objective-section body-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 text-justify">
+                <p>
+                    .....
+                </p>
+
+
+                <div class="accordion-infra">
+                    @for (item of facilitieData; track $index) {
+
+                    <div class="accordion__item-infra">
+                        <div class="accordion__header-infra" data-toggle='#faq0'>{{ item.title }}</div>
+                        <div class="accordion__content-infra" id='faq{{$index}}'>
+
+                            <p>
+                                {{ item.description }}
+                            </p>
+                            <div class="acc-content">
+
+                                <div class="row pt-3">
+
+                                    @for (imageData of item.image; track $index) {
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="backendUrl + 'uploads/facilites/' + imageData?.facilites_image"
+                                            data-lightbox="image-1" data-title="Library"><img
+                                                [src]="backendUrl + 'uploads/facilites/' + imageData?.facilites_image"
+                                                style="border-radius: 5px;"></a>
+                                    </div>
+                                    } @empty {
+                                    <li>There are no items.</li>
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    } @empty {
+                    <li>There are no items.</li>
+                    }
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="right-image make-me-sticky">
+                    <img [src]="backendUrl+'uploads/facilite/'+facilitieData?.image" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<app-fouricon></app-fouricon>
+<app-admission></app-admission>
+
+
+<app-footer></app-footer> -->
+
+
+  <!--page title -->
+  <section class="page-title centred" style="background-image: url(../../../../assets/images/resource/about-school.jpg);">
+    <div class="container">
+        <div class="content-box">
+            <h1>Facilities</h1>
+            <img src="../../../../assets/images/icons/line.svg" style="width:80px;">
+            <p>St. Fidelis School, Kheda Khush Khabar, Aligarh</p>
+            <!--ul class="bread-crumb clearfix">
+                <li><a href="index.php">Home</a></li>
+                <li>About School</li>
+            </ul -->
+        </div>
+    </div>
+</section>
+<!--page title end -->
+<section class="about-section about-infra style-two objective-section body-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 text-justify">
+                <p>St. Fidelis School, Aligarh, stands out as one of the finest institutions dedicated to fostering
+                    holistic growth in education and personality development. The school is equipped with
+                    state-of-the-art facilities, including modern teaching aids like electronic smart boards,
+                    enhancing the teaching-learning experience.</p>
+                <p>To ensure all-round development, the curriculum integrates a variety of engaging activities such
+                    as fancy dress, recitation, show-and-tell, cooking without fire, and pot decoration. These
+                    activities provide students with opportunities to explore their creativity, build confidence,
+                    and grow in multiple dimensions.</p>
+
+
+                <div class="accordion-infra">
+                    <div class="accordion__item-infra">
+                        <div class="accordion__header-infra" data-toggle="#faq1">Computer Lab</div>
+                        <div class="accordion__content-infra" id="faq1">
+                            <p><b>Preparing Students for a Digital World: The St. Fidelis Computer Lab</b></p>
+                            <p>At St. Fidelis School, we understand the essential role of computers in modern life.
+                                Our computer lab provides students with the tools and skills they need to thrive in
+                                this digital age. Students gain access to a world of information, enhance their
+                                learning through interactive software, and develop essential computer skills for
+                                future success. We are committed to equipping our students for the challenges and
+                                opportunities of the 21st century.
+                            </p>
+                            <div class="acc-content">
+
+                                <div class="row pt-3">
+                                    <!--div class="col-lg-6 col-md-6 col-sm-6 col-12 text-justify mb-3">
+                                        <a href="https://www.youtube.com/watch?v=bciujxCIYBM"
+                                            class="overlay-link lightbox-image">
+                                            <div class="lightboxContainer">
+                                                <img src="images/resource/computer-lab-inn.jpg" alt="">
+                                            </div>
+                                        </a>
+                                    </div -->
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/computerlab/1.jpg" data-lightbox="image-1"
+                                            data-title="Computer Lab"><img src="../../../../assets/imagesimages/computerlab/1.jpg"
+                                                alt="Computer Lab" style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/computerlab/2.jpg" data-lightbox="image-1"
+                                            data-title="Computer Lab"><img src="../../../../assets/images/computerlab/2.jpg"
+                                                alt="Computer Lab" style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/computerlab/3.jpg" data-lightbox="image-1"
+                                            data-title="Computer Lab"><img src="../../../../assets/images/computerlab/3.jpg"
+                                                alt="Computer Lab" style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/computerlab/4.jpg" data-lightbox="image-1"
+                                            data-title="Computer Lab"><img src="../../../../assets/images/computerlab/4.jpg"
+                                                alt="Computer Lab" style="border-radius: 5px;"></a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="accordion__item-infra">
+                        <div class="accordion__header-infra" data-toggle="#faq2">Library</div>
+                        <div class="accordion__content-infra" id="faq2">
+                            <p><b>Fostering a Love for Reading: The St. Fidelis School Library</b></p>
+                            <p>Our library is a vibrant space where students can explore a diverse collection of
+                                resources, enhance their English skills, and develop a lifelong love for reading.
+                                It's a valuable resource center for both students and teachers, supporting learning
+                                and fostering information literacy.</p>
+                            <div class="acc-content">
+
+                                <div class="row pt-3">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/library/1.jpg" data-lightbox="image-1"
+                                            data-title="Library"><img src="../../../../assets/images/library/1.jpg" alt="Library"
+                                                style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/library/2.jpg" data-lightbox="image-1"
+                                            data-title="Library"><img src="../../../../assets/images/library/2.jpg" alt="Library"
+                                                style="border-radius: 5px;"></a>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item-infra">
+                        <div class="accordion__header-infra" data-toggle="#faq3">Kids Corner</div>
+                        <div class="accordion__content-infra" id="faq3">
+                            <p><b>Playtime at St. Fidelis: Essential for Growth</b></p>
+                            <p>Our spacious playground, complete with a dedicated Kids Corner and swings, provides a
+                                fun and vital space for students to engage in physical activity, boost their health,
+                                develop social skills, and unleash their creativity. Playtime is an integral part of
+                                the holistic learning experience at St. Fidelis School, Aligarh.</p>
+                            <div class="acc-content">
+
+                                <div class="row pt-3">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/kidscornner/1.jpg" data-lightbox="image-1"
+                                            data-title="Kids Corner"><img src="../../../../assets/images/kidscornner/1.jpg"
+                                                alt="Library" style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/kidscornner/2.jpg" data-lightbox="image-1"
+                                            data-title="Kids Corner"><img src="../../../../assets/images/kidscornner/2.jpg"
+                                                alt="Library" style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/kidscornner/3.jpg" data-lightbox="image-1"
+                                            data-title="Kids Corner"><img src="../../../../assets/images/kidscornner/3.jpg"
+                                                alt="Library" style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/kidscornner/4.jpg" data-lightbox="image-1"
+                                            data-title="Kids Corner"><img src="../../../../assets/images/kidscornner/4.jpg"
+                                                alt="Library" style="border-radius: 5px;"></a>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item-infra">
+                        <div class="accordion__header-infra" data-toggle="#faq4">Maths Lab</div>
+                        <div class="accordion__content-infra" id="faq4">
+                            <p><b>The St. Fidelis Maths Lab: Making Maths Fun</b></p>
+                            <p>Our Maths Lab provides a stimulating environment where students can engage with
+                                mathematical concepts through hands-on activities, games, and technology. This
+                                interactive approach fosters conceptual understanding, problem-solving skills, and a
+                                positive attitude towards maths.</p>
+                            <div class="acc-content">
+
+                                <div class="row pt-3">
+                                    <!--div class="col-lg-6 col-md-6 col-sm-6 col-12 text-justify mb-3">
+                                        <a href="https://www.youtube.com/watch?v=Gnt12gT9vMA"
+                                            class="overlay-link lightbox-image">
+                                            <div class="lightboxContainer">
+                                                <img src="images/resource/phy-lab-in.jpg" alt="Physics Lab">
+                                            </div>
+                                        </a>
+                                    </div -->
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/mathlab/1.jpg" data-lightbox="image-7"
+                                            data-title="Math Lab"><img src="../../../../assets/images/mathlab/1.jpg" alt="Math Lab"
+                                                style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/mathlab/2.jpg" data-lightbox="image-8"
+                                            data-title="Math Lab"><img src="../../../../assets/images/mathlab/2.jpg" alt="Math Lab"
+                                                style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/mathlab/3.jpg" data-lightbox="image-9"
+                                            data-title="Math Lab"><img src="../../../../assets/images/mathlab/3.jpg" alt="Math Lab"
+                                                style="border-radius: 5px;width: 100%;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="../../../../assets/images/mathlab/4.jpg" data-lightbox="image-9"
+                                            data-title="Math Lab"><img src="../../../../assets/images/mathlab/4.jpg" alt="Math Lab"
+                                                style="border-radius: 5px;width: 100%;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item-infra">
+                        <div class="accordion__header-infra" data-toggle="#faq5">Class Rooms</div>
+                        <div class="accordion__content-infra" id="faq5">
+                            <p><b>St. Fidelis Classrooms: Bright Spaces for Learning</b></p>
+                            <p>Our classrooms are designed for comfort and learning, with features like ergonomic
+                                furniture, ample natural light, and interactive whiteboards. These vibrant spaces
+                                create a positive and engaging environment where students can thrive.</p>
+                            <div class="acc-content">
+
+                                <div class="row pt-3">
+                                  
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="images/classroom/1.jpg" data-lightbox="image-7"
+                                            data-title="Classrooms"><img src="images/classroom/1.jpg"
+                                                alt="Classrooms" style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="images/classroom/2.jpg" data-lightbox="image-8"
+                                            data-title="Physics Lab"><img src="images/classroom/2.jpg"
+                                                alt="Classrooms" style="border-radius: 5px;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="images/classroom/3.jpg" data-lightbox="image-9"
+                                            data-title="Classrooms"><img src="images/classroom/3.jpg"
+                                                alt="Classrooms" style="border-radius: 5px;width: 100%;"></a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
+                                        <a href="images/classroom/4.jpg" data-lightbox="image-9"
+                                            data-title="Classrooms"><img src="images/classroom/4.jpg"
+                                                alt="Classrooms" style="border-radius: 5px;width: 100%;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="right-image make-me-sticky">
+                    <img src="../../../../assets/images/right-image.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

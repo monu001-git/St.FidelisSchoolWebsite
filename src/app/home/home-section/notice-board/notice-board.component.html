@@ -1,0 +1,62 @@
+<section class="hero-slider home-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5 col-md-5 col-12">
+                <div class="banner-text">
+                    <img [src]="logoUrl || ' ../../assets/images/welcome-home.svg'" alt="Logo">
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-7 col-12">
+                <div class="banIMG">
+                    <video autoplay="" loop="" muted="" playsinline="" class="banner-video">
+
+                        <source [src]="logoUrl || '../../assets/images/main-slider/banner.mp4'" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section>
+    <div class="container p-0">
+        <div class="notice NoticeBoard">
+            <div class="container">
+                <div class="title centred">
+                    <div class="title">
+                        <h1>Notice Board</h1>
+                        <div class="banner-line"></div>
+                        <p>IMPORTANT ANNOUCEMENTS</p>
+                    </div>
+                </div>
+                <div class="notice-carousel-carousel owl-carousel owl-theme">
+                    @for (item of noticeBoard; track item) {
+                    <div class="notice-block-two">
+                        <a style="cursor: pointer;" (click)="noticeBoardPdf(item.id)">
+                            <div class="slick-slide animated slick-current slick-active" data-slick-index="0"
+                                aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10">
+                                <div class="NoticeLeft">
+                                    <span>Updated on</span>{{ item.date | date: 'dd' }}
+                                    <div class="month">{{ item.date | date: 'MMM' }}</div>
+                                </div>
+                                <div class="Noticeright">
+                                    <span>New</span>
+                                    <div class="NoticeHead">{{ item.title }}</div>
+                                    <p class="updated">Updated by: {{ item.publiser }}</p>
+                                    <div class="banner-line1"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    }@empty {
+                    <p>There are no items.</p>
+                    }
+                </div>
+                <a  routerLink="/home/mulitple-pdf"  class="view-all">View All Notices <img src="../../assets/images/icons/btn-arrow.svg"></a>
+            </div>
+        </div>
+    </div>
+    <div class="building"><img src="../../assets/images/nitice-bg.png"></div>
+
+
+</section>
+

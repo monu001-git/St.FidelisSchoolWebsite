@@ -1,0 +1,77 @@
+<section class="testimonial-section centred">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-12 col-12 p-0">
+                <div class="title centred">
+                    <h1>Testimonials</h1>
+                    <div class="banner-line"></div>
+                    <p>WHAT PARENTS ARE SAYING ABOUT US</p>
+
+                </div>
+                <div class="parent">
+                    <div class="testimonial-video-carousel-carousel owl-carousel owl-theme">
+
+
+                        @if (testimonial && testimonial.length > 0) {
+                        @for (item of testimonial; track $index) {
+                        <div class="birthday-block-two">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                                    <div Class="test-image-fit">
+                                        <img [src]="backendUrl + 'public/uploads/testimonial/'+ item.image">
+                    
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-12 pt-4">
+                                    <p class="mb-0">
+                                        <span [innerHTML]="item.testimonial || ''"></span>
+                                    </p>
+
+                            
+                                    <h4>{{ item.giver_name || '' }}</h4>
+                                    <h5>{{ item.giver_role || '' }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        }@else{
+                        <p>There are no items.</p>
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xl-5 col-lg-5 col-md-8 col-12 offset-md-2 offset-lg-0">
+                <div class="birthday">
+                    <div class="title centred">
+                        <h1>Happy Birthday</h1>
+                        <div class="banner-line"></div>
+                        <p>February Month</p>
+                    </div>
+
+                    <div class="student-slide">
+                        <div class="birthday-carousel-carousel owl-carousel owl-theme">
+
+                            @for (item of birthdayStudent; track $index) {
+                            <div class="birthday-block-two">
+                                <img [src]="backendUrl+'public/uploads/student/' + item.image" />
+                                <h4>{{ item.name || '' }}</h4>
+                                <h3>{{ item.dob || '' }}</h3>
+                                <p>Student</p>
+                            </div>
+                            }@empty {
+                            <p>There are no items.</p>
+                            }
+
+                        </div>
+                    </div>
+
+                    <div class="balloon-left"><img src="../../assets/images/icons/balloon-left.svg"></div>
+                    <div class="balloon-right"><img src="../../assets/images/icons/balloon-right.svg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

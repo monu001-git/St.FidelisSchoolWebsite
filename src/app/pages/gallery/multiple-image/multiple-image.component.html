@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+
+<section class="page-title centred" style="background-image: url(../../../../assets/images/resource/about-school.jpg);">
+    <div class="container">
+        <a routerLink="/home/album" class="back"><img src="../../../../assets/images/icons/back.svg"></a>
+        <div class="content-box">
+
+            <h1>{{ eventData?.name || '' }}</h1>
+            <p class="date-gallery">Event on {{ eventData?.event_date | date: 'EEEE, d MMMM y' }}</p>
+            <img src="../../../../assets/images/icons/line.svg" style="width:80px;">
+            <p><b>{{ data?.imageCount || '00' }}</b> Photos <span class="pr-2 pl-2">|</span> <b>00</b> Videos</p>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-page-section">
+    <div class="container-fluid">
+        <div class="gallery-masonry-block">
+            <div class="gallery-masonry-item-wrap gallery-masonry">
+                <div class="column column-4 gallery-masonry-item">
+                <div *ngIf="eventImagData?.length > 0; else noItems">
+                    <lightgallery [settings]="settings" selector="a">
+
+                        <a *ngFor="let item of eventImagData; let i = index"
+                            [href]="backendUrl + 'uploads/event/' + item.image_path"
+                            [attr.data-sub-html]="'Image ' + (i + 1)">
+                            <img [src]="backendUrl + 'uploads/event/' + item.image_path" alt="Event Image {{ i + 1 }}">
+                        </a>
+
+                    </lightgallery>
+                </div>
+
+                <ng-template #noItems>
+                    <p>There are no items to display.</p>
+                </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,140 @@
+<footer class="main-footer">
+  <section class="logo-footer centred">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-10 col-lg-10 col-md-10 offset-md-1 offset-lg-1">
+          <div class="footer-logo">
+            <img src="../../../assets/images/footer-logo.png" />
+
+            <div class="logo-text">
+              <h2>SAINT FIDELIS</h2>
+              <p>(Our Patron Saint)</p>
+              <br />
+              <!-- <img [src]="orgData.footer_logo || '../../../assets/images/logo.png'" width="120px" alt="Logo"> -->
+
+              <p class="abc">
+                St. Fidelis is today not only the pride of Aligarh but nearby
+                districts. The integral and holistic growth of our children has
+                been our aim and motto over the years.
+              </p>
+              <a href="about.php" class="view-all">Know More
+                <img src="../../../assets/images/icons/footer-btn-arrow.svg" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="footer-top">
+    <div class="container">
+      <div class="widget-section">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+            <div class="contact-widget footer-widget">
+              <h3 class="widget-title">Contact</h3>
+              <div class="widget-content">
+                <ul class="info-list">
+                  <li>
+                    <i class="fas fa-phone"></i>
+                    {{ orgData?.phone || '91 94121 72600' }}
+                  </li>
+                  <li>
+                    <i class="fas fa-envelope"></i>
+                    {{ orgData?.email || 'sfskaligarh@gmail.com' }}
+                  </li>
+                  <li>
+                    <i class="fas fa-map-marker-alt">
+                      {{ orgData?.address || 'W2M5+832, Kheda Khush Khabar, Uttar Pradesh 202140' }}
+                    </i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 footer-column">
+            <div class="link-widget footer-widget">
+              <h3 class="widget-title">Get Direction</h3>
+              <div class="widget-content">
+
+                <!-- @if(orgData?.map){ -->
+                <iframe
+                  src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7049.956806288758!2d77.99877226352693!3d27.933307326586927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3974a66d84773185%3A0x60a536d6cb055047!2sSt.%20Fidelis%20School!5e0!3m2!1sen!2sin!4v1731391353859!5m2!1sen!2sin'
+                  width="600" height="200" class="map" style="border: 0; border-radius: 30px" allowfullscreen
+                  loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- }@else{
+                <p>No Map available </p>
+                } -->
+
+
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-12 footer-column">
+            <div class="link-widget footer-widget">
+              <h3 class="widget-title">Links</h3>
+              <div class="widget-content">
+                <!-- <ul>
+                  @if (footerMenu && footerMenu.length > 0) {
+                  @for (item of footerMenu; track item.name) {
+                  <li>
+                    <a href="{{item.slug || ''}}" target="_blank">{{item.name || ''}}</a>
+                  </li>
+                  } @empty {
+                  <li>There are no items.</li>
+                  }
+                  }@else{
+                  <p>No link available </p>
+                  }
+                </ul> -->
+
+                <ul>
+                  <li><a href="https://sfskkkaligarh.org/empapp" target="_blank">Staff Login</a>
+                  </li>
+                  <li><a href="https://sfskkkaligarh.org/parentapp" target="_blank">Parents
+                      Login</a>
+                  </li>
+                  <li><a href="downloads/prospectus.pdf" target="_blank">Prospectus</a></li>
+                  <li><a href="admission-procedure.php">Admission</a></li>
+                  <li><a href="photo-gallery.php">Gallery</a></li>
+                  <li><a href="#">Infrastructure</a></li>
+                  <li><a href="#">360<sup>0</sup> Virtual Tour</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+            <div class="subscribe-widget footer-widget">
+              <h3 class="widget-title">DOWNLOAD SCHOOL APP</h3>
+              <div class="widget-content code">
+                <a href="#" target="_blank">
+                  <img src="../../../assets/images/app.png" class="app-width" /></a>
+                <a href="#" target="_blank">
+                  <img src="../../../assets/images/app1.png" class="app-width" /></a>
+                <br /><br />
+                <div class="code">
+                  <h3>'61619'</h3>
+                  School No.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-last">
+    <img src="../../../assets/images/footer-bg.png" />
+    <div class="row copyright">
+      <div class="col-lg-6 col-md-10 col-sm-12 offset-md-1 offset-lg-3 text-center col-12">
+        <p>
+          © Copyright 2024-2025 All Rights Reserved by, St. Fidelis School,
+          Kheda, Khush Khabar <br />Designed & Maintained By:<a href="https://palmboard.in/"
+            target="_blank">PalmBoard</a>
+        </p>
+        <p>
+          <a href="https://www.palmboard.in/sfskkk.php" target="_blank">UI/UX Design Copyright</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

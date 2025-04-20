@@ -1,0 +1,77 @@
+<app-header></app-header>
+
+<!--Page Title-->
+<section class="page-title centred" style="background-image: url(../../../../assets/images/resource/about-school.jpg);">
+    <div class="container">
+        <div class="content-box">
+            <p>WELCOME TO</p>
+            <h1>Gallery</h1>
+            <img src="../../../../assets/images/icons/line.svg" style="width:80px;">
+            <p> 00 Albums <span class="pr-2 pl-2">|</span> 00 Photos <span class="pr-2 pl-2">|</span> 00 Videos</p>
+
+        </div>
+    </div>
+</section>
+
+<!--End Page Title-->
+
+<!-- portfolio-section -->
+<section class="gallery-section-home gallery-section-home-in">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-12 col-12">
+                <div class="gallery-box">
+                    <div class="galleryschool-carousel-carousel owl-carousel owl-theme">
+                        @for (item of featuredEvent?.images; track $index) {
+                        <div class="topper-block-two">
+                            <img [src]="backendUrl+'uploads/event/' + item.image_path" />
+                        </div>
+                        } @empty {
+                        <li>There are no items.</li>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-12">
+                <div class="ach-text color-Gallery">
+                    <span>LATEST ALBUM</span>
+                    <h6>{{ featuredEvent?.event?.name || '' }}</h6>
+                    <p class="span color-Gallery">Event on {{ featuredEvent?.event?.event_date | date: 'EEEE, d MMMM y'
+                        }}</p>
+
+                    <p class="color-Gallery">
+                        <span [innerHTML]="featuredEvent?.event?.description || '' "></span>
+                    </p>
+
+                    <p class="color-Gallery"><b>00</b> Photos | <b>00</b> Video</p>
+                    <a style="cursor: pointer;" (click)="imageSection(featuredEvent?.event?.id)" class="btn-all">View
+                        All Photos <img src="../../../../assets/images/icons/footer-btn-arrow.svg" /></a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            @for (item of eventList; track $index) {
+            <div class="col-xl-3 col-lg-3 col-md-6 col-6">
+                <a style="cursor: pointer;" (click)="imageSection(featuredEvent?.event?.id)">
+                    <div class="subgallery">
+                        <img [src]="backendUrl+'uploads/event/'+item.image.image_path" class="gallery-item" />
+                        <h4>{{ item?.name || '' }}</h4>
+                        <p class="f14"><b>00</b> Photos <span class="spd">|</span> <b>00</b> Video</p>
+                    </div>
+                </a>
+            </div>
+            } @empty {
+            <li>There are no items.</li>
+            }
+        </div>
+    </div>
+</section>
+
+
+
+
+<app-footer></app-footer>

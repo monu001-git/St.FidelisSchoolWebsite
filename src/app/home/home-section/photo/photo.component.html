@@ -1,0 +1,52 @@
+<section class="gallery-section-home">
+
+    <div class="container ">
+
+        <div class="row" style="background: #0066B3; color:#fff">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-12">
+
+                <!-- <div class="row m-hide">
+                    <div class="title01 centred">
+                        <h1>Gallery</h1>
+                        <div class="banner-line"></div>
+                        <p><b>{{ albumCountNumber }}</b> Albums | <b>00</b> Photos | <b>00</b> Videos</p>
+
+                    </div>
+                </div> -->
+
+                <div class="gallery-box">
+                    <div class="galleryschool-carousel-carousel owl-carousel owl-theme">
+                        @for (item of eventImagData; track $index) {
+                            <div class="topper-block-two">
+                                <img [src]="backendUrl+'uploads/event/' + item.image_path" alt="Event Image">
+                            </div>
+                        } @empty {
+                          <p>There are no items.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12">
+                <div class="ach-text">
+                    <div class="row d-hide">
+                        <div class="title centred">
+                            <h1>Gallery</h1>
+                            <div class="banner-line"></div>
+                            <p><b>{{ albumCountNumber }}</b> Albums | <b>{{ totalImageCount }}</b> Photos | <b>00</b> Videos</p>
+
+                        </div>
+                    </div>
+                    <span>LATEST ALBUM</span>
+                    <h6>{{ eventData?.name || '' }}</h6>
+                    <p class="span">Event on {{ eventData?.event_date | date: 'EEEE, d MMMM y' }}</p>
+                    <p class="">
+                        <span [innerHTML]="eventData?.description || '' "></span>
+                    </p>
+                    <p class=""><b>{{  imageCount }}</b> Photos | <b>00</b> Video</p>
+                    <a style="cursor: pointer;" (click)="imageSection(eventData?.id)" class="btn-all">View All Photos <img src="../../assets/images/icons/footer-btn-arrow.svg" /></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

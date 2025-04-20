@@ -1,0 +1,153 @@
+<!-- <section class="topper-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 ">
+                <div class="achievements">
+                    <div class="title centred">
+                        <h1>Achievements</h1>
+                        <div class="banner-line"></div>
+                        <p>(2023-2024)</p>
+                    </div>
+                    <div class="achi-carousel-carousel owl-carousel owl-theme ">
+                        @for (item of achievementData; track $index) {
+                        <div class="achi-block-two">
+                            <a  style="cursor: pointer;" (click)="achievementSection(item.id)">
+                                <img [src]="backendUrl+'uploads/achievement/' + item.image">
+                                <span>New</span>
+                                <h6>
+                                    {{ item.title }}
+                                </h6>
+                            </a>
+                        </div>
+                        } @empty {
+                        <p>There are no items.</p>
+                        }
+                    </div>
+                    <div class="ach-text" style="cursor: pointer;">
+                        <a routerLink="/mulitple-achievement"  class="btn-all">View All <img
+                                src="../../assets/images/icons/btn-arrow.svg" style="height:13px"></a>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="col-xl-6 col-lg-6 col-md-12">
+                <div class="kidCorner">
+                    <div class="title centred">
+                        <h1>KIDS CORNER</h1>
+                        <div class="banner-line"></div>
+                        <p>(2024-2025)</p>
+                    </div>
+                    <div class="topper-carousel-carousel owl-carousel owl-theme">
+                        @for (item of StudentCorner; track item) {
+                        <div class="topper-block-two">
+                            <a routerLink="kids-conrner">
+                                <img src="../../assets/images/kidscornner/kidshome-01.jpg">
+                                <h6>A fun place to learn and play, where little
+                                    dreams grow every day!</h6>
+                            </a>
+                        </div>
+                        } @empty {
+                        <p>There are no items.</p>
+                        }
+                    </div>
+                    <div class="ach-text">
+                        <a routerLink="/kids-conrner" class="btn-all">View All <img
+                                src="../../assets/images/icons/btn-arrow.svg" style="height:13px"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<section class="topper-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-12 ">
+                <div class="achievements">
+                    <div class="title centred">
+                        <h1>Achievements</h1>
+                        <div class="banner-line"></div>
+                        <p>(2023-2024)</p>
+                    </div>
+                    <div class="achi-carousel-carousel owl-carousel owl-theme ">
+                        <div class="achi-block-two">
+                            <a href="sri-harish-chandra-singhal-memorial-sports-tournament.php">
+                                <img
+                                    src="../../assets/achievement/images/sri-harish-chandra-singhal-memorial-sports-tournament/Basket-ball-Girls-1.jpeg">
+                                <span>New</span>
+                                <h6>Sri Harish Chandra Singhal Memorial Sports Tournament organised by KI School,
+                                    Aligarh</h6>
+                            </a>
+                        </div>
+                        <div class="achi-block-two">
+                            <a href="open-girls-state-basketball-championship-2023.php">
+                                <img
+                                    src="../../assets/images/achievement/open_girls_state_basketball_championship_at_greater_noida.jpeg">
+                                <span>New</span>
+                                <h6>Open Girls State Basketball Championship on 15<sup>th</sup> March, 2023 at
+                                    Greater Noida</h6>
+                                <h6></h6>
+                            </a>
+                        </div>
+                        <div class="achi-block-two">
+                            <a href="youth-basketball-championship-at-meerut-2023.php">
+                                <img src="../../assets/images/achievement/youth-basketball-championship-at-meerut-2023.jpg">
+
+                                <span>New</span>
+                                <h6>Youth Basketball Championship on 23<sup>rd</sup> July, 2023 at Meerut</h6>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="ach-text">
+                        <a href="achievements.php" class="btn-all">View All <img src="../../assets/images/icons/btn-arrow.svg"
+                                style="height:13px"></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xl-6 col-lg-6 col-md-12">
+                <div class="kidCorner">
+                    <div class="title centred">
+                        <h1>KIDS CORNER</h1>
+                        <div class="banner-line"></div>
+                        <p>(2024-2025)</p>
+                    </div>
+                    <div class="topper-carousel-carousel owl-carousel owl-theme">
+                        <div class="topper-block-two">
+                            <a href="kho-kho-regional-tournament.php">
+                                <img src="../../assets/images/kidscornner/kidshome-01.jpg">
+
+                                <h6>A fun place to learn and play, where little dreams grow every day!</h6>
+                            </a>
+                        </div>
+                        <div class="topper-block-two">
+                            <a href="kho-kho-regional-tournament.php">
+                                <img src="../../assets/images/kidscornner/kidshome-02.jpg">
+
+                                <h6>A fun place to learn and play, where little dreams grow every day!</h6>
+                            </a>
+                        </div>
+                        <div class="topper-block-two">
+                            <a href="kho-kho-regional-tournament.php">
+                                <img src="../../assets/images/kidscornner/kidshome-03.jpg">
+
+                                <h6>A fun place to learn and play, where little dreams grow every day!</h6>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ach-text">
+
+                        <a href="kids-corner.php" class="btn-all">View All <img src="../../assets/images/icons/btn-arrow.svg"
+                                style="height:13px"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>    
+</section>

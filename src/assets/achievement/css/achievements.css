@@ -1,0 +1,351 @@
+.grid--content .column--wrapper {
+    display: column;
+    columns: 3;
+    gap: 20;
+    break-inside: avoid;
+}
+.post--item {
+    break-inside: avoid;
+	margin-bottom: 15px;
+}
+.post--item .achievement-text{padding:0px 10px}
+.post--item p {
+  line-height: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+}
+.f10{font-size:11px !important;}
+.post--masonry {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.grid--content .column--wrapper .post--item img {
+    border-radius: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+	height: 250px;
+    object-fit: cover;
+}
+
+.grid--content .post--title {
+  font-weight: 600;
+  color: #1d2327;
+  padding-bottom: 0px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.grid--content .post-user {
+    margin: 10px 0;
+}
+
+.grid--content .post-user a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.grid--content .post-user img {
+    border-radius: 100% !important;
+    max-width: 35px;
+    max-height: 35px;
+    margin: 0;
+    margin-bottom: 0 !important;
+}
+
+.grid--content .post-user span {
+    margin-left: 10px;
+    color: #949494;
+    font-size: 14px;
+}
+
+.grid--content .post-user a:hover {
+    background-color: #f0f0f0;
+    border-radius: 50px;
+}
+.grid--content {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0px 20px;
+}
+
+@supports (grid-template-rows: masonry) {
+    .grid--content .column--wrapper {
+        display: grid;
+        grid-template-columns: repeat(4), 1fr);
+        grid-template-rows: masonry;
+        grid-auto-flow: dense;
+        align-tracks: stretch;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid--content .post-user img {
+        max-width: 20px;
+        max-height: 20px;
+    }
+
+    .grid--content .post-user span {
+        font-size: 11px;
+    }
+
+    .grid--content .post--title {
+        font-size: 12px;
+    }
+
+    .grid--content .column--wrapper {
+        columns: 2;
+    }
+}
+
+
+/* portfolio single description */
+.portfolio-title {
+	margin-top: 20px;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: 5px;
+}
+.al-desc-inner {
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+.portfolio-info .album-description {
+	margin-top: 0;
+	margin-bottom: 25px;
+	font-size: 14px;
+}
+
+/* portfolio single portfolio atr */
+.portfolio-atr {
+}
+.album-meta {
+	margin-bottom: 15px;
+}
+.album-meta span {
+	margin-bottom: 15px;
+	font-size: 13px;
+	font-weight: 400;
+}
+.album-meta .photos-count {
+}
+.album-meta .photos-views {
+}
+@media (max-width: 992px) {
+	.portfolio-atr {
+		margin-top: 60px !important;
+	}
+}
+.portfolio-atr > ul > li {
+	position: relative;
+	margin: 0 0 20px 0;
+	padding-left: 20px;
+}
+.portfolio-atr > ul > li:before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 5px;
+	bottom: 5px;
+	width: 1px;
+	border-left: 1px solid rgba(136, 136, 136, 0.4);
+}
+.portfolio-atr span {
+	display: inline-block;
+	line-height: 21px;
+}
+.portfolio-atr .head { 
+	margin: 0;
+	color: #333; 
+	font-weight: 500; 
+	font-size: 12px; 
+}
+.portfolio-atr .info { 
+	color: #333; 
+	font-weight: 400; 
+	font-size: 12px; 
+}
+.portfolio-atr span a {
+	display: block; 
+	color: #333; 
+}
+.portfolio-atr span a:hover { 
+	color: #000; 
+}
+
+/* portfolio single share */
+.portfolio-share .info {
+	margin: 6px 5px 4px 0;
+	font-size: 16px;
+}
+
+/* portfolio single info bottom */
+.portfolio-info-bottom {
+	position: absolute;
+	bottom: -7px;
+	left: 0;
+	right: 0;
+}
+@media (max-width: 992px) {
+	.portfolio-info-bottom {
+		position: relative;
+		bottom: 0;
+	}
+}
+
+/* portfolio single album attributes */
+.portfolio-single .album-attributes {
+	overflow: hidden;
+}
+
+/* portfolio single info nav */
+.portfolio-nav {
+}
+.portfolio-nav > ul {
+	margin: 0;
+}
+.portfolio-nav .pn-link {
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 400;
+	color: #333;
+}
+.portfolio-nav .pn-link:hover {
+	color: #000;
+}
+.portfolio-nav .pn-link .pn-link-icon {
+	font-size: 18px;
+}
+.portfolio-nav .pn-link .pn-link-text {
+	position: relative;
+	top: -3px;
+}
+
+
+/* portfolio single info bottom */
+.portfolio-info-bottom {
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	right: 0;
+}
+@media (max-width: 992px) {
+	.portfolio-info-bottom {
+		position: relative;
+		bottom: 0;
+	}
+}
+/* portfolio single album attributes */
+.portfolio-single .album-attributes {
+	overflow: hidden;
+}
+
+/* portfolio single info nav */
+.portfolio-nav {
+}
+.portfolio-nav > ul {
+	margin: 0;
+}
+.portfolio-nav .pn-link {
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 400;
+	color: #333;
+}
+.portfolio-nav .pn-link:hover {
+	color: #000;
+}
+.portfolio-nav .pn-link .pn-link-icon {
+	font-size: 18px;
+}
+.portfolio-nav .pn-link .pn-link-text {
+	position: relative;
+	top: -2px;
+}
+.back-to-list{color:#33333f}
+.album-attributes {
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	list-style: none;
+}
+.album-attributes > li {
+	display: inline-block;
+	padding: 0;
+	background: none;
+}
+
+a.al-at-link {
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 400;
+	color: #333;
+}
+a.al-at-link:hover, a.al-at-link:focus {
+	color: #987F28;
+}
+
+a.al-at-link .al-at-icon {
+	font-size: 18px;
+}
+a.al-at-link .al-at-text {
+	position: relative;
+	top: -3px;
+}
+
+.objective-section ul li {
+    padding: 10px;
+	background: none;
+}
+
+.achievement-new{padding-bottom:0px}
+.achievement-new .owl-theme .owl-nav .owl-next {
+    border-radius: 50px;
+    position: absolute;
+    top: 35%;
+    right: 20px;
+    height: 48px;
+    line-height: 42px;
+    width: 48px;
+    background: #004970;
+    text-align: center;
+}
+.achievement-new .owl-theme .owl-nav .owl-prev {
+    border-radius: 50px;
+    position: absolute;
+    top: 35%;
+    left: 20px;
+    height: 48px;
+    line-height: 42px;
+    width: 48px;
+    background: #004970;
+    text-align: center;
+}
+.achievement-new .owl-theme .owl-nav .owl-next img{height:20px}
+.achievement-new .owl-theme .owl-nav .owl-prev img{height:20px}
+.achievement-new h4{font-size:24px;padding:20px 0px;text-align:center}
+.achievement-new .birthday-block-two img{border-radius:50px; height:400px; object-fit:cover}
+
+@media screen and (max-width: 768px) {
+	.achievement-new .birthday-block-two img{border-radius:50px; height:250px; object-fit:cover}
+}

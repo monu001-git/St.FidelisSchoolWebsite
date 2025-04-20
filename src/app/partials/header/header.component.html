@@ -1,0 +1,346 @@
+<header class="main-header style-two mm-hide">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <ul class="info-list-email">
+                        <li>
+                            <a href="mailto:{{ orgData?.email || '' }}">
+                                <img src="../../../assets/images/icons/mail.svg" alt="Mail Icon" />
+                                 {{ orgData?.email || 'No email available' }} 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="header-info pull-right">
+                        <ul class="info-list">
+                            <li>
+                                <div class="story">
+                                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><img src="../../../assets/images/icons/story.svg" alt="story" /></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="inner-container innav">
+            <div class="menu-box">
+                <div class="nav-outer">
+                    <div class="menu-area">
+                        <nav class="main-menu navbar-expand-lg">
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li class="current homeIcon">
+                                        <a routerLink="/" style="cursor: pointer;"><i class="fa fa-home" style="font-size: 24px"></i>
+                                        </a>
+                                    </li>
+
+                                    @if (headerMenu && headerMenu.length > 0) {
+                                        @for (item of headerMenu.slice(0, 4); track item) {
+                                            @if (item.children && item.children.length > 0) {
+                                                <li class="dropdown">
+                                                    <a>{{ item.name }}
+                                                        <img src="../../../assets/images/downarrow.svg" class="dw" />
+                                                    </a>
+                                                    <ul>
+                                                        @if (item.children && item.children.length > 0) {
+                                                            @for (itemChild of item.children; track itemChild) {
+                                                                <li><a [routerLink]="['/home', itemChild.slug]" >{{ itemChild.name }}</a>
+                                                                </li>
+                                                            }
+
+                                                        }
+                                                    </ul>
+                                                </li>
+                                            } @else {
+                                                <li><a   [routerLink]="['/home', item.slug]" >{{ item.name }}</a></li>
+                                            }
+                                        } @empty {
+                                            <li>There are no items.</li>
+                                        }
+                                    }@else{
+                                        <li>There are no items.</li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-box-logo">
+                <figure class="logo">
+                    <a routerLink="/" style="cursor: pointer;">
+                        @if(orgData?.header_logo != ''){
+                            <img [src]="orgData?.header_logo || '../../../assets/images/logo.png'" alt="Logo">
+                        }
+                         
+                    </a>
+                </figure>
+            </div>
+
+            <div class="menu-box-right">
+                <div class="nav-outer">
+                    <div class="menu-area">
+                        <nav class="main-menu navbar-expand-lg">
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation right-side-menu clearfix">
+
+                                    @if (headerMenu && headerMenu.length > 0) {
+                                        @for (item of headerMenu.slice(4,8); track item.name) {
+                                            @if (item.children && item.children.length > 0) {
+                                                <li class="dropdown">
+                                                    <a>{{ item.name }}
+                                                        <img src="../../../assets/images/downarrow.svg" class="dw" />
+                                                    </a>
+                                                    <ul>
+                                                        @if (item.children && item.children.length > 0) {
+                                                            @for (itemChild of item.children; track itemChild.name) {
+                                                                <li><a [routerLink]="['/home', itemChild.slug]"
+                                                                   >{{ itemChild.name }}</a>
+                                                                </li>
+                                                            }
+
+                                                        }
+                                                    </ul>
+                                                </li>
+                                            } @else {
+                                                <li><a  [routerLink]="['/home', item.slug]">{{ item.name }}</a></li>
+                                            }
+                                        } @empty {
+                                            <li>There are no items.</li>
+                                        }
+                                    }@else{
+                                        <li>There are no items.</li>
+                                    }
+
+                                    <li class="login dropdown">
+                                        <a href="#" target="_blank">
+                                            <img src="../../../assets/images/icons/user.svg" alt /> Login
+                                            <img src="../../../assets/images/downarrowBlack.svg" class="dw" />
+                                        </a>
+                                        <ul>
+                                            <li>
+                                                <a href="https://sfskkkaligarh.org/parentapp"
+                                                    target="_blank">Parent/student login</a>
+                                            </li>
+                                            <li>
+                                                <a href="https://sfskkkaligarh.org/empapp" target="_blank">
+                                                                                Staff Login</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- static section -->
+
+<!-- <header class="main-header style-two mm-hide">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <ul class="info-list-email">
+                        <li>
+                            <a href="mailto:sfskaligarh@gmail.com"><img src="../../../assets/images/icons/mail.svg"
+                                    alt="">
+                                {{ orgData?.email || 'sfskaligarh@gmail.com' }}</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="header-info pull-right">
+                        <ul class="info-list">
+                            <li>
+                                <div class="story">
+                                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><img
+                                            src="../../../assets/images/icons/story.svg" alt="story"></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="inner-container innav">
+     
+            <div class="menu-box">
+                <div class="nav-outer">
+                    <div class="menu-area">
+                        <nav class="main-menu navbar-expand-lg">
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li class="current homeIcon"><a href="/"><i class="fa fa-home"
+                                                style="font-size:24px"></i></a></li>
+                                    <li class="dropdown">
+                                        <a href="#">About Us <img src="../../../assets/images/downarrow.svg" class="dw" /></a>
+                                            <ul>
+                                                <li><a routerLink="/home/about-school">About School</a></li>
+                                                <li><a routerLink="/home/our-patron">Our Patron Saint</a></li>
+                                                <li><a routerLink="/home/vision-mission">Our Vision & Mission</a></li>
+                                                <li><a routerLink="/home/school-emblem">School Emblem</a></li>
+                                                <li><a routerLink="/home/facilities">Facilities</a></li>
+                                                <li class="dropdown">
+                                                    <a href="#">Office Bearers</a>
+                                                    <ul>
+                                                        <li><a routerLink="/home/principals">Principals</a></li>
+                                                        <li><a routerLink="/home/managing-committee-2023-2024">Managing Committee</a></li>
+                                                        <li><a routerLink="/home/head-boy-girl">Head Boy & Head Girl</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                    </li>
+                                    <li class="current">|</li>
+                                    <li class="dropdown">
+                                        <a href="#">Prospectus <img src="../../../assets/images/downarrow.svg"
+                                                class="dw" /></a>
+                                        <ul>
+                                            <li><a routerLink="/home/aims-and-objectives">Aims & Objectives</a></li>
+                                            <li><a routerLink="/home/downloads/prospectus.pdf" target="_blank">Prospectus</a></li>
+                                            <li><a routerLink="/home/admission-policy">Admission Policy</a></li>
+                                            <li><a routerLink="/home/fee-structures">Fee-Structures</a></li>
+                                            <li><a routerLink="/home/school-timings">School Timings </a></li>
+                                            <li><a routerLink="/home/uniform">School Uniform</a></li>
+                                            <li><a routerLink="/home/meetingIdentification">Meeting/Identification</a></li>
+                                            <li><a routerLink="/home/examination-evaluations">Exam And Evaluations</a></li>
+                                            <li><a routerLink="/home/rules-regulations">Rules & Regulations</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="current">|</li>
+                                    <li class="dropdown">
+                                        <a href="#">Messages <img src="../../../assets/images/downarrow.svg"
+                                                class="dw" /></a>
+                                        <ul>
+                                            <li><a routerLink="/home/principals-message">Principal’s Message</a></li>
+                                            <li><a routerLink="/home/headmistress-message">Headmistress Message</a></li>
+                                            <li><a routerLink="/home/head-boy-message">Head Boy’s Message</a></li>
+                                            <li><a routerLink="/home/head-girl-message">Head Girl’s Message</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="current">|</li>
+                                    
+                                    
+                                    <li class="dropdown">
+                                        <a href="#">Gallery <img src="../../../assets/images/downarrow.svg"
+                                                class="dw" /></a>
+                                        <ul>
+                                            <li><a routerLink="/home/photo-gallery">Photo Gallery</a></li>
+                                            <li><a routerLink="/home/video-gallery">Video Gallery</a></li>
+                                            <li><a routerLink="/home/media-gallery">Media Gallery</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+   
+            <div class="menu-box-logo">
+                <figure class="logo ">
+                    <a href="/"><img src="../../../assets/images/logo.png" alt=""></a>
+                </figure>
+            </div>
+    
+            <div class="menu-box-right">
+                <div class="nav-outer">
+                    <div class="menu-area">
+                        <nav class="main-menu navbar-expand-lg">
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation right-side-menu clearfix">
+                                    <li class="dropdown">
+                                        <a href="#">Achievements <img src="../../../assets/images/downarrow.svg"
+                                                class="dw" /></a>
+                                        <ul>
+                                            <li><a routerLink="/home/#">Class Toppers</a></li>
+                                            <li><a routerLink="/home/achievements">Achievements</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="current">|</li>
+
+                                    <li class="dropdown">
+                                        <a href="#">CBSE Mandatory <img src="../../../assets/images/downarrow.svg"
+                                                class="dw" /></a>
+                                        <ul class="rkscroll" id="style-4">
+
+                                            <li><a routerLink="/home/cbse-pdf/annualCalander.pdf" target="_blank">Annual
+                                                    Calender</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Annual-Academic-Calender.pdf" target="_blank">Annual
+                                                    Academic Calender</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Building-Safety-Certificate-and-Clarification.pdf"
+                                                    target="_blank">Building Safety Certificate</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Fee-Structure-of-the-School.pdf" target="_blank">Fee
+                                                    Structure of the School</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Fire-Safety-Certificate.pdf" target="_blank">Fire
+                                                    Safety Certificate</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Land-Certificate.pdf" target="_blank">Land
+                                                    Certificate</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/PTA-Members.pdf" target="_blank">PTA Members</a>
+                                            </li>
+                                            <li><a routerLink="/home/cbse-pdf/BSA-Recogination-Certificate.pdf"
+                                                    target="_blank">Recognition Certificate</a></li>
+                                            <li><a href="#" target="_blank">BSA Registration Certificate</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/School-NOC.pdf" target="_blank">School NOC</a>
+                                            </li>
+                                            <li><a routerLink="/home/cbse-pdf/List-of-School-Management-Committee.pdf"
+                                                    target="_blank">SMC</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Society-Registration-Certificate.pdf"
+                                                    target="_blank">Society Registration Certificate</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Drinking-Water-Certificate.pdf" target="_blank">Water
+                                                    Health and Sanitation Certificate</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Lab-Test-Report.pdf" target="_blank">Water Test
+                                                    Report</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Sanitary-Condition-Certificate.pdf"
+                                                    target="_blank">Sanitary Condition Certificate</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/self-certificate.pdf" target="_blank">Self
+                                                    Certificate</a></li>
+                                            <li><a routerLink="/home/cbse-pdf/Teacher-Details.pdf" target="_blank">Teacher's
+                                                    Detail </a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="current">|</li>
+                                    <li><a href="contact">Contact Us</a></li>
+                                    <li class="login dropdown">
+                                        <a href="#" target="_blank">
+                                            <img src="../../../assets/images/icons/user.svg" alt=""> Login <img
+                                                src="../../../assets/images/downarrowBlack.svg" class="dw" /> </a>
+                                        <ul>
+                                            <li><a href="https://sfskkkaligarh.org/parentapp"
+                                                    target="_blank">Parent/student login</a></li>
+                                            <li><a href="https://sfskkkaligarh.org/empapp" target="_blank"> Staff
+                                                    Login</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</header> -->

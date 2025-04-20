@@ -1,0 +1,45 @@
+<section class="page-title centred" [style.background-image]="'url('+bannerImage+')'">
+    <div class="container">
+        <div class="content-box">
+            <h1>{{ contentData?.content.name || '' }}</h1>
+            <img src="../../../../assets/images/icons/line.svg" style="width:80px;">
+            <p>St. Fidelis School, Kheda Khush Khabar, Aligarh</p>
+        </div>
+    </div>
+</section>
+
+
+@if(message503){
+<div class="body-bg">
+    <section class="about-section style-two objective-section">
+        <div class="container">
+            <div class="row">
+                <p class="fs-3 fw-bold text-danger">
+                    {{ message503 || '' }}
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+}
+
+<div class="body-bg">
+    <section class="about-section style-two objective-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12 text-justify">
+                  
+                    <p class="">
+                        <span [innerHTML]="contentData?.content?.descriptions || ''"></span>
+                    </p>
+
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="right-image make-me-sticky">
+                        <img [src]='contentImage' alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
