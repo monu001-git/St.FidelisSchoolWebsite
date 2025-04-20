@@ -18,14 +18,7 @@ export class PhotoComponent implements OnInit {
   unSubscribeSubject: Subject<any> = new Subject();
   eventData: any;
   albumCountNumber:any;
-  eventImagData: { 
-    id: number; 
-    image_name: string; 
-    image_path: string; 
-    event_id: number; 
-    created_at: string; 
-    updated_at: string;
-  }[] = [];
+  eventImagData:any;
   backendUrl:any;
   imageCount:any;
   totalImageCount:any;
@@ -40,41 +33,34 @@ export class PhotoComponent implements OnInit {
   ngOnInit() {
     this.getEventData();
   }
-
-  getEventData() {
+ 
+  getEventData(): void {
     this.HomeApiService.eventGallerySection()
       .pipe(takeUntil(this.unSubscribeSubject))
       .subscribe({
         next: (res: any) => {
-          if (res?.data && res.data != '') {
-            if (res.status === 200) {
-              this.eventData = res.data.eventData;
-              this.eventImagData = res.data.eventImage
-              this.backendUrl = environment.apiUrl;
-              this.albumCountNumber = res.data.albumCount
-              this.totalImageCount = res.data.totalImageCount
-              this.imageCount = res.data.imageCount
-            } else {
-              this.SweetAlertServiceService.showErrorAlert(
-                'Something went wrong!'
-              );
-            }
+          if (res?.status === 200 && res?.data) {
+            this.eventData = res.data.eventData || [];
+            this.eventImagData = res.data.eventImage || [];
+            this.backendUrl = environment.apiUrl;
+            this.albumCountNumber = res.data.albumCount || 0;
+            this.totalImageCount = res.data.totalImageCount || 0;
+            this.imageCount = res.data.imageCount || 0;
           } else {
-            // this.SweetAlertServiceService.showErrorAlert(
-            //   'No Event Gallery data Not available.'
-            // );
+            this.SweetAlertServiceService.showErrorAlert(
+              'Something went wrong while fetching the Event Gallery data!'
+            );
           }
         },
         error: (err) => {
-          console.error('Error fetching menu data:', err);
-          // this.SweetAlertServiceService.showErrorAlert(
-          //   'An error occurred while fetching the menu data.'
-          // );
-        },
+          console.error('Error fetching event data:', err);
+          this.SweetAlertServiceService.showErrorAlert(
+            'An error occurred while fetching the event data.'
+          );
+        }
       });
   }
-
-
+  
   imageSection(id: number) {
     this.router.navigate(['/home/image'], {
       queryParams: {

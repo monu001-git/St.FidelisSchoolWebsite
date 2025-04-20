@@ -56,6 +56,7 @@ export class MultipleImageComponent implements OnInit {
       const id = params['id'];
       const encryptId = this.CryptoService.decrypt(id);
       if (encryptId) {
+        alert(encryptId)
         this.getEventData(encryptId);
       }
     });
@@ -63,7 +64,8 @@ export class MultipleImageComponent implements OnInit {
 
 
   getEventData(id: any) {
-    const encryptedID = this.CryptoService.encrypt(id);
+   // const encryptedID = this.CryptoService.encrypt(id);
+   const encryptedID = id;
     this.PageApiService.eventGallerySection(encryptedID)
       .pipe(takeUntil(this.unSubscribeSubject))
       .subscribe({

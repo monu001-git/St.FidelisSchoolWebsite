@@ -56,7 +56,7 @@
         <div class="row">
             @for (item of eventList; track $index) {
             <div class="col-xl-3 col-lg-3 col-md-6 col-6">
-                <a style="cursor: pointer;" (click)="imageSection(featuredEvent?.event?.id)">
+                <a style="cursor: pointer;" (click)="imageSection(item.id)">
                     <div class="subgallery">
                         <img [src]="backendUrl+'uploads/event/'+item.image.image_path" class="gallery-item" />
                         <h4>{{ item?.name || '' }}</h4>
