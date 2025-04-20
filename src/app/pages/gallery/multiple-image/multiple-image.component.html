@@ -18,24 +18,22 @@
     <div class="container-fluid">
         <div class="gallery-masonry-block">
             <div class="gallery-masonry-item-wrap gallery-masonry">
-                <div class="column column-4 gallery-masonry-item">
-                <div *ngIf="eventImagData?.length > 0; else noItems">
-                    <lightgallery [settings]="settings" selector="a">
-
+                <div *ngIf="eventImagData?.length > 0; else noItems" class="column column-4 gallery-masonry-item">
+                    <lightgallery [settings]="settings" selector="a" class="gallery-item">
                         <a *ngFor="let item of eventImagData; let i = index"
                             [href]="backendUrl + 'uploads/event/' + item.image_path"
                             [attr.data-sub-html]="'Image ' + (i + 1)">
-                            <img [src]="backendUrl + 'uploads/event/' + item.image_path" alt="Event Image {{ i + 1 }}">
+                            <img [src]="backendUrl + 'uploads/event/' + item.image_path" alt="Event Image {{ i + 1 }}"
+                                class="gallery-item">
                         </a>
-
                     </lightgallery>
                 </div>
 
                 <ng-template #noItems>
                     <p>There are no items to display.</p>
                 </ng-template>
-                </div>
             </div>
+
         </div>
     </div>
 </section>

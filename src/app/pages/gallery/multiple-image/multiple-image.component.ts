@@ -56,7 +56,6 @@ export class MultipleImageComponent implements OnInit {
       const id = params['id'];
       const encryptId = this.CryptoService.decrypt(id);
       if (encryptId) {
-        alert(encryptId)
         this.getEventData(encryptId);
       }
     });
