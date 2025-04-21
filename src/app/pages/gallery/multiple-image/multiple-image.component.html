@@ -9,7 +9,7 @@
             <h1>{{ eventData?.name || '' }}</h1>
             <p class="date-gallery">Event on {{ eventData?.event_date | date: 'EEEE, d MMMM y' }}</p>
             <img src="../../../../assets/images/icons/line.svg" style="width:80px;">
-            <p><b>{{ data?.imageCount || '00' }}</b> Photos <span class="pr-2 pl-2">|</span> <b>00</b> Videos</p>
+            <p><b>{{ data?.imageCount || '00' }}</b> Photos <span class="pr-2 pl-2">|</span> <b>{{data?.videoCount}}</b> Videos</p>
         </div>
     </div>
 </section>
@@ -21,8 +21,7 @@
                 <div *ngIf="eventImagData?.length > 0; else noItems" class="column column-4 gallery-masonry-item">
                     <lightgallery [settings]="settings" selector="a" class="gallery-item">
                         <a *ngFor="let item of eventImagData; let i = index"
-                            [href]="backendUrl + 'uploads/event/' + item.image_path"
-                            [attr.data-sub-html]="'Image ' + (i + 1)">
+                            [href]="backendUrl + 'uploads/event/' + item.image_path">
                             <img [src]="backendUrl + 'uploads/event/' + item.image_path" alt="Event Image {{ i + 1 }}"
                                 class="gallery-item">
                         </a>

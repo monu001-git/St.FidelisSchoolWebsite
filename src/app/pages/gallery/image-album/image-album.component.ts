@@ -24,6 +24,7 @@ export class ImageAlbumComponent implements OnInit {
  backendUrl:any;
  featuredEvent:any;
  eventList:any;
+ data:any
 
   constructor(
     private ScriptService:ScriptService,
@@ -78,7 +79,7 @@ export class ImageAlbumComponent implements OnInit {
         .subscribe({
           next: (res: any) => {
             if (res?.status === 200 && res?.data) {
-              console.log('res?.data')
+              this.data = res?.data;
               this.eventList = res.data.eventList || [];
               this.featuredEvent = res.data.featuredEvent || [];
               this.backendUrl = environment.apiUrl;

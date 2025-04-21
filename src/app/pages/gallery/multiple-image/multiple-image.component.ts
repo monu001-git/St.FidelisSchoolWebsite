@@ -16,10 +16,7 @@ import { SweetAlertServiceService } from '../../../commonService/service/sweet-a
 import { environment } from '../../../../environments/environment';
 import { BusyService } from '../../../commonService/service/busy.service';
 import { CryptoService } from '../../../commonService/service/crypto.service';
-
 import lgZoom from 'lightgallery/plugins/zoom';
-import lgThumbnail from 'lightgallery/plugins/thumbnail';
-
 import { LightgalleryModule } from 'lightgallery/angular';
 import { LightGallery } from 'lightgallery/lightgallery';
 
@@ -93,22 +90,18 @@ export class MultipleImageComponent implements OnInit {
 
   settings = {
     licenseKey: '0000-0000-000-0000',
-    plugins: [lgZoom, lgThumbnail],
+    plugins: [lgZoom],
     speed: 100,
     download: true,
     zoom: true,
     fullScreen: true,
-    actualSize: true,
     controls: true,
     showZoomInOutIcons: true,
-    mode: 'lg-fade' as const,  // Fixed mode
+    mode: 'lg-fade' as const,
     loop: true,
     escKey: true,
     swipeThreshold: 50,
     preload: 2,
-    thumbWidth: 100,
-    thumbHeight: '80px',
-    showThumbByDefault: true,
   };
   
 }
